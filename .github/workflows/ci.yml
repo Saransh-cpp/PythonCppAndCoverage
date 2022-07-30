@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  coverage:
+  build:
     name: Coverage
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,7 @@ jobs:
 
       - name: Test
         run: |
-          python -m pip install pytest
+          python -m pip install pytest pytest-cov
           pytest test_calc.py --cov -v
 
       - name: Upload coverage report
