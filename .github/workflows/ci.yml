@@ -26,6 +26,9 @@ jobs:
           tar -xzf lcov-1.16.tar.gz
           cd lcov-1.16
           sudo make install
+          
+      - name: Get pybind11
+        run: git clone https://github.com/pybind/pybind11 ./pybind11
 
       - name: Configure
         run: |
